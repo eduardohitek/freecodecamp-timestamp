@@ -26,17 +26,14 @@ app.get('/:param', function (req, res) {
   else{
     myDate = moment(param, "X")
   }
-  console.log(param)
-  console.log(myDate)
+
   if(myDate.isValid()){
     res.json({unix: myDate.format("X"), natural: myDate.format("MMMM D, YYYY")})
   }
     else{
       res.json({unix: null, natural: null})
     }
-
 })
-
 
 
 app.listen(8080, function () {
